@@ -1,71 +1,27 @@
-/* let a = 5,
-    b = a;
+/* let str = 'some';
+let strObj = new String(str);
 
-b = b + 5;
+console.log(typeof(str));
+console.log(typeof(strObj));
 
-console.log(b);
-console.log(a); */
+console.dir([1,2,3]); */
 
-/* const obj = {
-  a: 5,
-  b: 1,
-};
-
-const copy = obj; // Передаётся ссылка
-
-copy.a = 10;
-
-console.log(copy);
-console.log(obj); */
-
-/* function copy(mainObj) {
-  let objCopy = {};
-  
-  let key;
-  for (key in mainObj) {
-    objCopy[key] = mainObj[key];
+const soldier = {
+  health: 400,
+  armor: 100,
+  sayHello: function() {
+    console.log('Hello');
   }
-
-  return objCopy;
-}
-
-const numbers = {
-  a: 2,
-  b: 5,
-  c: {
-    x: 7,
-    y: 4,
-  },
 };
 
-const newNumbers = copy(numbers);
+const john = Object.create(soldier);
 
-newNumbers.a = 10;
-newNumbers.c.x = 10;
+// const john = {
+//   health: 100,
+// };
 
-console.log(newNumbers);
-console.log(numbers);
+// john.__proto__ = soldier;
+// Object.setPrototypeOf(john, soldier);
 
-const add = {
-  d: 17,
-  e: 20,
-};
-
-console.log(Object.assign(numbers,add)); */
-
-///
-const video = ['youtube','vimeo','rutube'],
-      blogs = ['wordpress', 'livejournal', 'blogger'],
-      internet = [...video, ...blogs, 'vk', 'facebook'];
-console.log(internet);
-
-//
-function log(a, b, c) {
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
-
-const num = [2, 5, 7];
-
-log(...num);
+console.log(john.armor);
+john.sayHello();
