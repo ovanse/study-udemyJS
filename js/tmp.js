@@ -1,43 +1,10 @@
-// To String
+let number = 5; debugger
 
-// 1)
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
-
-// 2)
-console.log(typeof(5 + ''));
-
-const num = 5;
-
-console.log('https://vk.com/catalog/' + num);
-
-const fontSize = 26 + 'px';
-
-// To Number
-
-// 1)
-console.log(typeof(Number('4')));
-
-// 2)
-console.log(typeof(+'4'));
-let answ = +prompt('Hello','');
-
-// 3)
-console.log(typeof(parseInt('15px', 10)));
-
-// To Boolean
-
-// 0, '', null, undefined, NaN = false
-// other = true
-
-let switcher = null;
-
-if (switcher) {
-  console.log('Working...');
+function logNumber() {
+  console.log(number); debugger
+  return true;
 }
 
-switcher = 1;
+number = 6;
 
-if (switcher) {
-  console.log('Working...');
-}
+logNumber(); debugger
