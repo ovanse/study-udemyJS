@@ -1,20 +1,31 @@
-const box = document.getElementById('box');
-console.log(box);
+const box = document.getElementById('box'),
+  btns = document.getElementsByTagName('button'),
+  circles = document.getElementsByClassName('circle'),
+  hearts = document.querySelectorAll('.heart'),
+  oneHeart = document.querySelector('.heart'),
+  wrapper = document.querySelector('.wrapper');
 
-const btns = document.getElementsByTagName('button');
-const btn = document.getElementsByTagName('button')[1];
-console.log(btns);
-console.log(btn);
-console.log(btns[2]);
+box.style.backgroundColor = 'blue';
+box.style.width = '500px';
 
-const circles = document.getElementsByClassName('circle');
-console.log(circles);
+btns[1].style.borderRadius = '100%';
 
-const hearts = document.querySelectorAll('.heart');
-console.log(hearts);
-hearts.forEach((item) => {
-  console.log(item);
-});
+// hearts.forEach((item) => {
+//   item.style.backgroundColor = 'blue';
+// });
 
-const oneHeart = document.querySelector('.heart');
-console.log(oneHeart);
+const div = document.createElement('div');
+// const text = document.createTextNode('I was here');
+
+div.classList.add('black');
+document.body.append(div);
+// document.querySelector('.wrapper').append(div);
+// wrapper.prepend(div);
+// hearts[0].before(div);
+// hearts[0].after(div);
+
+// circles[0].remove();
+
+// hearts[0].replaceWith(circles[0]);
+
+div.innerHTML = 'Hello World';
