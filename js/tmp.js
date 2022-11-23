@@ -1,34 +1,20 @@
-/* let number = 5; debugger
+const box = document.getElementById('box');
+console.log(box);
 
-function logNumber() {
-  console.log(number); debugger
-  return true;
-}
+const btns = document.getElementsByTagName('button');
+const btn = document.getElementsByTagName('button')[1];
+console.log(btns);
+console.log(btn);
+console.log(btns[2]);
 
-number = 6;
+const circles = document.getElementsByClassName('circle');
+console.log(circles);
 
-logNumber(); debugger
+const hearts = document.querySelectorAll('.heart');
+console.log(hearts);
+hearts.forEach((item) => {
+  console.log(item);
+});
 
-number = 8;
-
-logNumber(); debugger */
-
-function createCounter() {
-  let counter = 0;
-
-  const  myFunction = function() {
-    counter = counter + 1;
-    return counter;
-  }
-
-  return myFunction;
-}
-
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
-
-console.log(c1, c2, c3);
-console.log(typeof(increment));
-console.log(typeof(c1));
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
