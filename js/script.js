@@ -25,3 +25,11 @@ movieDB.movies.forEach((film, i) => {
         <div class="delete"></div>
     </li>`;
 });
+
+const btn = document.querySelector('button');
+const deleteElement = (e) => {
+  console.log(e.target);
+  // e.target.remove();
+  // console.log('Click');
+};
+btn.addEventListener('click', deleteElement);
