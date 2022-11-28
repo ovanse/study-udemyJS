@@ -1,23 +1,30 @@
-function powOld(x, n) {
-  let result = 1;
+// touchstart
+// touchmove
+// touchend
+// touchenter
+// touchleave
+// touchcancel
 
-  for (let i = 0; i < n; i++) {
-    result *= x;
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  const box = document.querySelector('.box');
 
-  return result;
-}
+  box.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    console.log('Start');
+    console.log(event.targetTouches);
+  });
 
-function pow(x, n) {
-  if (n === 1) {
-    return x;
-  } else {
-    return x * pow(x, n - 1);
-  }
-}
+  box.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+    console.log(event.targetTouches[0].pageX);
+  });
 
-console.log(pow(2, 1));
-console.log(pow(2, 2));
-console.log(pow(2, 3));
-console.log(pow(2, 4));
-console.log(pow(2, 5));
+  box.addEventListener('touchend', (event) => {
+    event.preventDefault();
+    console.log('End');
+  });
+});
+
+// touches
+// targetTouches
+// changedTouches
