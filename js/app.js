@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   box.addEventListener('touchmove', (event) => {
     event.preventDefault();
-    console.log(event.targetTouches[0].pageX);
+    console.log(`x: ${event.targetTouches[0].pageX}; y: ${event.targetTouches[0].pageY} `);
   });
 
   box.addEventListener('touchend', (event) => {
