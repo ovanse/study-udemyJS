@@ -1,30 +1,26 @@
-const box = document.querySelector('.box');
-const block = document.querySelector('.block');
+const boxesQuery = document.querySelectorAll('.box');
+const boxesGet = document.getElementsByClassName('box');
 
-console.log(block);
+// boxesQuery[0].remove();
+// boxesGet[0].remove();
 
-/* if (block) {
-  console.log(block.textContent);
-} */
+// for (let i = 0; i < 5; i++) {
+//   const div = document.createElement('div');
+//   div.classList.add('box');
+//   document.body.append(div);
+// }
 
-console.log(block?.textContent);
-// block?.textContent = '123'; // при записи обишка
+// console.log(boxesQuery);
+// console.log(boxesGet);
+// console.log(document.body.children);
 
-console.log(1 + 2);
+// console.log(Array.from(boxesGet));
 
-const userData = {
-  name: 'Ivan',
-  age: null,
-  say: function () {
-    console.log('Hello');
-  },
-};
+boxesQuery.forEach((box) => {
+  if (box.matches('.this')) {
+    console.log('Found class this');
+    box.style.backgroundColor = 'black';
+  }
+});
 
-/* if (userData && userData.skills && userData.skills.js) {
-  console.log(userData.skills.js);
-} */
-
-console.log(userData?.skills?.js);
-
-userData.say();
-userData.hey?.();
+console.log(boxesQuery[0].closest('.wrapper'));
