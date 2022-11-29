@@ -1,16 +1,30 @@
 const box = document.querySelector('.box');
+const block = document.querySelector('.block');
 
-const newHeight = 0;
-const newWidth = 400;
+console.log(block);
 
-function changeParams(elem, h, w) {
-  elem.style.height = `${h ?? 200}px`;
-  elem.style.width = `${w ?? 200}px`;
-  elem.innerHTML = (h ?? 200) * (w ?? 200);
-}
+/* if (block) {
+  console.log(block.textContent);
+} */
 
-changeParams(box, newHeight, newWidth);
+console.log(block?.textContent);
+// block?.textContent = '123'; // при записи обишка
 
-let userName;
-let userKey;
-console.log(userName ?? userKey ?? 'User'); // В отличии от или (||), ?? реагирует только на null и undefined
+console.log(1 + 2);
+
+const userData = {
+  name: 'Ivan',
+  age: null,
+  say: function () {
+    console.log('Hello');
+  },
+};
+
+/* if (userData && userData.skills && userData.skills.js) {
+  console.log(userData.skills.js);
+} */
+
+console.log(userData?.skills?.js);
+
+userData.say();
+userData.hey?.();
