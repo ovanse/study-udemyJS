@@ -1,26 +1,14 @@
-const boxesQuery = document.querySelectorAll('.box');
-const boxesGet = document.getElementsByClassName('box');
+const obj = {
+  name: 'test',
+  [Symbol('id')]: 1,
+};
 
-// boxesQuery[0].remove();
-// boxesGet[0].remove();
+// let id = Symbol('id');
+// obj[id] = 1;
 
-// for (let i = 0; i < 5; i++) {
-//   const div = document.createElement('div');
-//   div.classList.add('box');
-//   document.body.append(div);
-// }
+console.log(obj);
+// console.log(obj[id]);
 
-// console.log(boxesQuery);
-// console.log(boxesGet);
-// console.log(document.body.children);
-
-// console.log(Array.from(boxesGet));
-
-boxesQuery.forEach((box) => {
-  if (box.matches('.this')) {
-    console.log('Found class this');
-    box.style.backgroundColor = 'black';
-  }
-});
-
-console.log(boxesQuery[0].closest('.wrapper'));
+for (let value in obj) {
+  console.log(value);
+}
