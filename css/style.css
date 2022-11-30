@@ -1,32 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
+button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: yellow;
   border: none;
 }
 
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: yellow;
-  margin: 2px;
-  height: 50px;
-  width: 150px;
-}
-
-.wrapper {
-  background-color: blue;
-  height: 400px;
-  width: 400px;
-}
-
 .box {
-  background-color: red;
-  height: 100px;
+  position: absolute;
   width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: 3px solid red;
 }
