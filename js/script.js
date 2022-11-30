@@ -22,6 +22,6 @@ shops.forEach((shop, i) => {
 
 console.log(map);
 
-for (let price of map.values()) {
+for (let price of map.entries()) {
   console.log(price);
 }
