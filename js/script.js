@@ -22,10 +22,6 @@ shops.forEach((shop, i) => {
 
 console.log(map);
 
-const goods = [];
-for (let shop of map.keys()) {
-  console.log(shop);
-  goods.push(Object.keys(shop)[0]);
+for (let price of map.values()) {
+  console.log(price);
 }
-
-console.log(goods);
