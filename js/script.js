@@ -1,14 +1,22 @@
-const obj = {
-  name: 'test',
-  [Symbol('id')]: 1,
+'use strict';
+
+/* const user = {
+  firstName: 'Alex',
+  secondName: 'Smith',
+  birthDate: '04/20/1993',
+  showMyPublicData: function () {
+    console.log(`${this.firstName} ${this.secondName}`);
+  },
 };
 
-// let id = Symbol('id');
-// obj[id] = 1;
+console.log(user); */
 
-console.log(obj);
-// console.log(obj[id]);
+const shops = [{ rice: 500 }, { oil: 200 }, { bread: 50 }];
 
-for (let value in obj) {
-  console.log(value);
-}
+const map = new Map();
+
+map.set(shops[0], 5000);
+map.set(shops[1], 15000);
+map.set(shops[2], 25000);
+
+console.log(map);
