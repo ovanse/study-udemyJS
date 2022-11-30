@@ -1,6 +1,6 @@
 'use strict';
 
-/* const user = {
+const user = {
   firstName: 'Alex',
   secondName: 'Smith',
   birthDate: '04/20/1993',
@@ -9,19 +9,9 @@
   },
 };
 
-console.log(user); */
+const userMap = new Map(Object.entries(user));
 
-const shops = [{ rice: 500 }, { oil: 200 }, { bread: 50 }];
-const budget = [5000, 15000, 25000];
+console.log(userMap);
 
-const map = new Map([[{ paper: 400 }, 8000]]);
-
-shops.forEach((shop, i) => {
-  map.set(shop, budget[i]);
-});
-
-console.log(map);
-
-map.forEach((value, key, map) => {
-  console.log(key, value);
-});
+const newUserObj = Object.fromEntries(userMap);
+console.log(newUserObj);
