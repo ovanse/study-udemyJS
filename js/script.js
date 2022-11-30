@@ -20,4 +20,8 @@ shops.forEach((shop, i) => {
   map.set(shop, budget[i]);
 });
 
-console.log(map);
+console.log(map.get(shops[0]));
+console.log(map.has(shops[0]));
+// map.delete(key);
+// map.clear();
+console.log(map.size);
