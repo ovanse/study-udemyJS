@@ -14,14 +14,18 @@ console.log(user); */
 const shops = [{ rice: 500 }, { oil: 200 }, { bread: 50 }];
 const budget = [5000, 15000, 25000];
 
-const map = new Map();
+const map = new Map([[{ paper: 400 }, 8000]]);
 
 shops.forEach((shop, i) => {
   map.set(shop, budget[i]);
 });
 
-console.log(map.get(shops[0]));
-console.log(map.has(shops[0]));
-// map.delete(key);
-// map.clear();
-console.log(map.size);
+console.log(map);
+
+const goods = [];
+for (let shop of map.keys()) {
+  console.log(shop);
+  goods.push(Object.keys(shop)[0]);
+}
+
+console.log(goods);
