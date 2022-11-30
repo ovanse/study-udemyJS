@@ -6,7 +6,7 @@ const btns = document.querySelectorAll('button'),
 wrapper.addEventListener('click', (event) => {
   if (
     event.target &&
-    event.target.tagName == 'BUTTON' &&
+    event.target.matches('button.blue') &&
     event.target.classList.contains('blue')
   ) {
     btns[1].classList.toggle('red');
