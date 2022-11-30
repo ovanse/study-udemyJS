@@ -1,17 +1,6 @@
 'use strict';
 
-const user = {
-  firstName: 'Alex',
-  secondName: 'Smith',
-  birthDate: '04/20/1993',
-  showMyPublicData: function () {
-    console.log(`${this.firstName} ${this.secondName}`);
-  },
-};
+const arr = [1, 1, 2, 2, 4, 5, 6, 5];
+const set = new Set(arr);
 
-const userMap = new Map(Object.entries(user));
-
-console.log(userMap);
-
-const newUserObj = Object.fromEntries(userMap);
-console.log(newUserObj);
+console.log(set);
