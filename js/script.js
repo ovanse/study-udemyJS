@@ -1,15 +1,11 @@
 'use strict';
 
-const now = new Date();
+let start = new Date();
 
-console.log(now.getFullYear());
-console.log(now.getMonth() + 1);
-console.log(now.getDate());
-console.log(now.getDay());
-console.log(now.getHours());
-console.log(now.getUTCHours());
-console.log(now.getTimezoneOffset() / 60);
-console.log(now.getTime());
+for (let i = 0; i < 100000; i++) {
+  let some = i ** 3;
+}
 
-console.log(now.setHours(18));
-console.log(now);
+let end = new Date();
+
+console.log(`Cycle work time ${end - start} milliseconds`);
