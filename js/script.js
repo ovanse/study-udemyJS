@@ -1,35 +1,21 @@
 'use strict';
 
-const arr = ['Alex', 'Anna', 'Oleg', 'Alex'];
-const set = new Set(arr);
+const bigint = 111111111111111111566666666666666666666666666666666n;
 
-function unique(arr) {
-  return Array.from(new Set(arr));
-}
-console.log(unique(arr));
+const sameBigint = BigInt(111111111111111111566666666666666666666666666666666);
 
-set.add('Ivan');
-set.add('Oleg');
-console.log(set);
+console.log(typeof bigint);
+console.log(sameBigint);
 
-if (set.has('Anna')) {
-  set.delete('Anna');
-}
-console.log(set);
+// console.log(5n + 1); // error
+// console.log(Math.round(5n)); // error
+console.log(1n + 2n);
+console.log(5n / 2n);
+console.log(2n > 5);
+console.log(2n == 2);
+console.log(2n === 2);
 
-console.log(set.size);
-
-for (let value of set) {
-  console.log(value);
-}
-
-set.forEach((value, valueAgain, set) => {
-  console.log(value, valueAgain);
-});
-
-console.log(set.values());
-console.log(set.keys());
-console.log(set.entries());
-
-set.clear();
-console.log(set);
+let otherBigint = 1n;
+let number = 2;
+console.log(otherBigint + BigInt(number));
+console.log(Number(otherBigint) + number);
