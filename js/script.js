@@ -1,31 +1,9 @@
 'use strict';
 
-class User {
-  constructor(name, id) {
-    this.name = name;
-    this.id = id;
-    this.human = true;
-  }
-  hello() {
-    console.log(`Hello ${this.name}.`);
-  }
-  exit() {
-    console.log(`User ${this.name} leaved.`);
-  }
+function showThis() {
+  console.log(this);
 }
 
-User.prototype.exit = function () {
-  console.log(`User ${this.name} exited.`);
-};
+showThis();
 
-const ivan = new User('Ivan', 0);
-const alex = new User('Alexey', 1);
-
-ivan.exit();
-alex.exit();
-
-ivan.hello();
-alex.hello();
-
-console.log(ivan);
-console.log(alex);
+// 1) Обычная функция - this = window (или undefined если используется use strict)
