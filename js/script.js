@@ -1,25 +1,15 @@
 'use strict';
 
-function showThis(a, b) {
-  console.log(this);
-  function sum() {
-    console.log(this);
-    return a + b;
-  }
-
-  console.log(sum());
+function User(name, id) {
+  this.name = name;
+  this.id = id;
+  this.human = true;
+  this.hello = function () {
+    console.log(`Hello ${this.name}!`);
+  };
 }
+let ivan = new User('Ivan', 0);
 
-showThis(4, 5);
-
-const obj = {
-  a: 20,
-  b: 15,
-  sum: function () {
-    console.log(this);
-  },
-};
-obj.sum();
-
-// 1) Обычная функция - this = window (или undefined если используется use strict)
+// 1) Обычная функция - this = window (или undefined если используется use strict).
 // 2) Контекст у методов объекта - сам объект.
+// 3) this в конструктарах и классах - это новый экземпляр объекта.
