@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  outline: 0;
+  border: none;
 }
 
 *,
@@ -11,10 +13,17 @@
 }
 
 .box {
-  background-color: #dfcfbe;
+  background-color: #efc050;
   width: 300px;
   height: 300px;
   margin: 0 auto;
   margin-top: 50px;
   padding: 10px;
+}
+button {
+  width: 100px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
 }
