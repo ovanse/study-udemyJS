@@ -11,6 +11,7 @@
 }
 
 .box {
+  border: 1px solid #888888;
   background-color: #efc050;
   width: 300px;
   height: 300px;
@@ -19,8 +20,9 @@
   padding: 10px;
   border-radius: 8px;
 }
-
 button {
+  border: 1px solid #888888;
+  border-radius: 8px;
   width: 100px;
   height: 40px;
   display: block;
