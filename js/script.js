@@ -249,26 +249,37 @@ document.addEventListener('DOMContentLoaded', () => {
       const statusMessage = document.createElement('img');
       statusMessage.src = message.loading;
       statusMessage.classList.add('spinner');
-      // form.append(statusMessage);
       form.insertAdjacentElement('afterend', statusMessage);
 
-      const request = new XMLHttpRequest();
-      request.open('POST', './php/server.php');
-
-      request.setRequestHeader('Content-type', 'application/json');
       const formData = new FormData(form);
 
-      const object = {};
+      /* const object = {};
 
       formData.forEach(function (value, key) {
         object[key] = value;
       });
 
-      const json = JSON.stringify(object);
+      const json = JSON.stringify(object); */
 
-      request.send(json);
+      fetch('./php/server.php', {
+        method: 'POST',
+        // headers: { 'Content-type': 'application/json' },
+        body: formData,
+      })
+        .then((data) => data.text())
+        .then((data) => {
+          console.log(data);
+          showThanksModal(message.success);
+          statusMessage.remove();
+        })
+        .catch(() => {
+          showThanksModal(message.failure);
+        })
+        .finally(() => {
+          form.reset();
+        });
 
-      request.addEventListener('load', () => {
+      /*  request.addEventListener('load', () => {
         if (request.status === 200) {
           console.log(request.response);
           showThanksModal(message.success);
@@ -277,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
           showThanksModal(message.failure);
         }
-      });
+      }); */
     });
   }
 
