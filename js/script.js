@@ -2,16 +2,32 @@
 
 console.log('Запрос данных...');
 
-setTimeout(() => {
-  console.log('Подготовка данных...');
-
-  const product = {
-    name: 'TV',
-    price: '2000',
-  };
-
+const req = new Promise(function (resolve, reject) {
   setTimeout(() => {
-    product.status = 'ordered';
-    console.log(product);
+    console.log('Подготовка данных...');
+
+    const product = {
+      name: 'TV',
+      price: '2000',
+    };
+
+    resolve(product);
   }, 2000);
-}, 2000);
+});
+
+req
+  .then((product) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        product.status = 'ordered';
+        resolve(product);
+      }, 2000);
+    });
+  })
+  .then((data) => {
+    data.modify = true;
+    return data;
+  })
+  .then((data) => {
+    console.log(data);
+  });
