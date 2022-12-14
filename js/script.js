@@ -22,3 +22,12 @@ console.log(answers);
 const some = [4, 'qwq', 'sfdfsfe'];
 console.log(some.some((item) => typeof item === 'number'));
 console.log(some.every((item) => typeof item === 'number'));
+
+// reduce
+const arr = [4, 5, 1, 3, 2, 6];
+const res = arr.reduce((sum, current) => sum + current, 3);
+console.log(res);
+
+const arrStr = ['apple', 'pear', 'plum'];
+const resStr = arrStr.reduce((sum, current) => sum + ', ' + current);
+console.log(resStr);
