@@ -17,3 +17,8 @@ answers = answers.map((item) => {
 });
 
 console.log(answers);
+
+// every|some
+const some = [4, 'qwq', 'sfdfsfe'];
+console.log(some.some((item) => typeof item === 'number'));
+console.log(some.every((item) => typeof item === 'number'));
