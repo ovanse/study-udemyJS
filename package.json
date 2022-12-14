@@ -1,0 +1,22 @@
+{
+  "name": "food",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx json-server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ovanse/study-udemyJS.git"
+  },
+  "author": "Andrei Ovchinnikov <andrei.s.ovchinnikov@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ovanse/study-udemyJS/issues"
+  },
+  "homepage": "https://github.com/ovanse/study-udemyJS#readme",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  }
+}
