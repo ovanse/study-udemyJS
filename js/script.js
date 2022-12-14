@@ -31,3 +31,20 @@ console.log(res);
 const arrStr = ['apple', 'pear', 'plum'];
 const resStr = arrStr.reduce((sum, current) => sum + ', ' + current);
 console.log(resStr);
+
+// work example
+const obj = {
+  ivan: 'persone',
+  ann: 'persone',
+  dog: 'animal',
+  cat: 'animal',
+};
+
+const newArr = Object.entries(obj)
+  .filter((item) => {
+    return item[1] === 'persone';
+  })
+  .map((item) => {
+    return item[0];
+  });
+console.log(newArr);
