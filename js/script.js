@@ -1,50 +1,44 @@
 'use strict';
 
-// filter
-const names = ['Ivan', 'Anna', 'Ksenia', 'Voldemart'];
+// localStorage.setItem('number', 5);
 
-const shortNames = names.filter((name) => {
-  return name.length < 5;
+// console.log(localStorage.getItem('number'));
+
+// localStorage.removeItem('number');
+
+// localStorage.clear();
+
+const checkbox = document.querySelector('#checkbox'),
+    form = document.querySelector('form'),
+    change = document.querySelector('#color');
+
+if (localStorage.getItem('isChecked')) {
+    checkbox.checked = true;
+}
+
+if (localStorage.getItem('bg') === 'changed') {
+    form.style.backgroundColor = 'red';
+}
+
+checkbox.addEventListener('change', () => {
+    localStorage.setItem('isChecked', true);
 });
 
-console.log(shortNames);
-
-// map
-let answers = ['IvAn', 'AnnA', 'Hello'];
-
-answers = answers.map((item) => {
-  return item.toLowerCase();
+change.addEventListener('click', () => {
+    if (localStorage.getItem('bg') === 'changed') {
+        localStorage.removeItem('bg');
+        form.style.backgroundColor = 'inherit';
+    } else {
+        localStorage.setItem('bg', 'changed');
+        form.style.backgroundColor = 'red';
+    }
 });
 
-console.log(answers);
-
-// every|some
-const some = [4, 'qwq', 'sfdfsfe'];
-console.log(some.some((item) => typeof item === 'number'));
-console.log(some.every((item) => typeof item === 'number'));
-
-// reduce
-const arr = [4, 5, 1, 3, 2, 6];
-const res = arr.reduce((sum, current) => sum + current, 3);
-console.log(res);
-
-const arrStr = ['apple', 'pear', 'plum'];
-const resStr = arrStr.reduce((sum, current) => sum + ', ' + current);
-console.log(resStr);
-
-// work example
-const obj = {
-  ivan: 'persone',
-  ann: 'persone',
-  dog: 'animal',
-  cat: 'animal',
+const person = {
+    name: 'Alex',
+    age: 25,
 };
 
-const newArr = Object.entries(obj)
-  .filter((item) => {
-    return item[1] === 'persone';
-  })
-  .map((item) => {
-    return item[0];
-  });
-console.log(newArr);
+const serializedPerson = JSON.stringify(person);
+localStorage.setItem('alex', serializedPerson);
+console.log(JSON.parse(localStorage.getItem('alex')));
