@@ -1,13 +1,13 @@
 'use strict';
 
-const ans = prompt('Введите ваше имя');
+// const ans = prompt('Введите ваше имя');
 
 //i независимо от регистра
 //g глобальный поиск (не только первое совпадение паттерна)
 //m многострочный режим
 // const reg = /n/i; // флаг глобальности не работает на простом search
-const reg = /n/gi;
-console.log(reg.test(ans));
+// const reg = /n/gi;
+// console.log(reg.test(ans));
 
 // console.log(ans.search(reg));
 // console.log(ans.match(reg));
@@ -17,3 +17,6 @@ console.log(reg.test(ans));
 // console.log(pass.replace(/\./g, '*'));
 
 // console.log('12-34-56'.replace(/-/g, ':'));
+
+const str = 'My name is R2D2';
+console.log(str.match(/\w\d\w\d/i));
