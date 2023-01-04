@@ -1,6 +1,6 @@
 'use strict';
 
-const ans = prompt('Введите ваше имя');
+// const ans = prompt('Введите ваше имя');
 
 //i независимо от регистра
 //g глобальный поиск (не только первое совпадение паттерна)
@@ -9,4 +9,8 @@ const ans = prompt('Введите ваше имя');
 const reg = /n/gi;
 
 // console.log(ans.search(reg));
-console.log(ans.match(reg));
+// console.log(ans.match(reg));
+
+const pass = prompt('Password');
+console.log(pass);
+console.log(pass.replace(/\./g, '*'));
