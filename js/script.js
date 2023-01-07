@@ -1,34 +1,49 @@
 'use strict';
 
-function User(name, age) {
-    this.name = name;
-    let userAge = age;
+class User {
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
+    }
 
-    this.say = function () {
-        console.log(`Имя пользователя: ${this.name}, возраст ${userAge}`);
-    };
+    say() {
+        console.log(`Имя пользователя: ${this._name}, возраст ${this._age}`);
+    }
 
-    this.getAge = function () {
-        return userAge;
-    };
+    get name() {
+        return this._name;
+    }
 
-    this.setAge = function (age) {
-        if (typeof age === 'number' && age > 0 && age < 110) {
-            userAge = age;
+    set name(name) {
+        if (typeof name === 'string' && name !== '') {
+            this._name = name;
             return true;
         } else {
             console.log(`Недопустимое значение!`);
             return false;
         }
-    };
+    }
+    get age() {
+        return this._age;
+    }
+
+    set age(age) {
+        if (typeof age === 'number' && age > 0 && age < 110) {
+            this._age = age;
+            return true;
+        } else {
+            console.log(`Недопустимое значение!`);
+            return false;
+        }
+    }
 }
 
 const ivan = new User('Ivan', 27);
 console.log(ivan.name);
-console.log(ivan.getAge());
+console.log(ivan.age);
 
-ivan.setAge(30);
-ivan.setAge(300);
-console.log(ivan.getAge());
+ivan.age = 30;
+ivan.age = 300;
+console.log(ivan.age);
 
 ivan.say();
