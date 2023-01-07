@@ -1,16 +1,34 @@
 'use strict';
 
-const persone = {
-    name: 'Alex',
-    age: 25,
+function User(name, age) {
+    this.name = name;
+    let userAge = age;
 
-    get userAge() {
-        return this.age;
-    },
-    set userAge(num) {
-        this.age = num;
-    },
-};
+    this.say = function () {
+        console.log(`Имя пользователя: ${this.name}, возраст ${userAge}`);
+    };
 
-persone.userAge = 30;
-console.log(persone.userAge);
+    this.getAge = function () {
+        return userAge;
+    };
+
+    this.setAge = function (age) {
+        if (typeof age === 'number' && age > 0 && age < 110) {
+            userAge = age;
+            return true;
+        } else {
+            console.log(`Недопустимое значение!`);
+            return false;
+        }
+    };
+}
+
+const ivan = new User('Ivan', 27);
+console.log(ivan.name);
+console.log(ivan.getAge());
+
+ivan.setAge(30);
+ivan.setAge(300);
+console.log(ivan.getAge());
+
+ivan.say();
