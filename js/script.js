@@ -6,14 +6,13 @@ class User {
         this._age = age;
     }
 
-    say() {
+    say = () => {
         console.log(`Имя пользователя: ${this._name}, возраст ${this._age}`);
-    }
+    };
 
     get name() {
         return this._name;
     }
-
     set name(name) {
         if (typeof name === 'string' && name !== '') {
             this._name = name;
@@ -23,13 +22,28 @@ class User {
             return false;
         }
     }
+
     get age() {
         return this._age;
     }
-
     set age(age) {
         if (typeof age === 'number' && age > 0 && age < 110) {
             this._age = age;
+            return true;
+        } else {
+            console.log(`Недопустимое значение!`);
+            return false;
+        }
+    }
+
+    #lastName = 'Ovchinnikov';
+
+    get lastName() {
+        return this.#lastName;
+    }
+    set lastName(str) {
+        if (typeof str === 'string' && str !== '') {
+            this.#lastName = str;
             return true;
         } else {
             console.log(`Недопустимое значение!`);
@@ -45,5 +59,7 @@ console.log(ivan.age);
 ivan.age = 30;
 ivan.age = 300;
 console.log(ivan.age);
+
+console.log(ivan.lastName);
 
 ivan.say();
