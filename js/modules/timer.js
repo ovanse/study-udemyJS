@@ -1,7 +1,5 @@
-export default function timer() {
+export default function timer(timerSelector, deadline) {
     // Timer
-    // const deadline = '2022-12-07';
-    const deadline = '2023-01-01';
 
     function getTimeRemaining(endtime) {
         let days, hours, minutes, seconds;
@@ -60,5 +58,5 @@ export default function timer() {
         }
     }
 
-    setClock('.timer', deadline);
+    setClock(timerSelector, deadline);
 }
