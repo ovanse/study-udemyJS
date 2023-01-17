@@ -1,38 +1,31 @@
 'use strict';
 
-const data = [
-    {
-        id: 'box',
-        tag: 'div',
-    },
-    {
-        id: 'fff',
-        tag: 'nav',
-    },
-    {
-        id: 'circle',
-        tag: '',
-    },
-];
+// function* generator() {
+//     yield 'S';
+//     yield 'c';
+//     yield 'r';
+//     yield 'i';
+//     yield 'p';
+//     yield 't';
+// }
 
-try {
-    data.forEach((blockObj, i) => {
-        const block = document.createElement(blockObj.tag);
+// const str = generator();
 
-        if (blockObj.id === '') throw new Error(`В данных под номером ${i + 1} нет id`);
+// console.log(str.next().value);
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
+// console.log(str.next());
 
-        block.setAttribute('id', blockObj.id);
-        document.body.append(block);
-    });
-} catch (e) {
-    if (e.name === 'Error') {
-        console.error(e.name);
-        console.log(e.message);
-        console.log(e.stack);
-    } else throw e;
+function* count(n) {
+    for (let i = 0; i < n; i++) {
+        yield i;
+    }
 }
 
-const err = new SyntaxError('testtesttest');
-console.log(err.name);
-console.log(err.message);
-console.log(err.stack);
+const counter = count(7);
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
