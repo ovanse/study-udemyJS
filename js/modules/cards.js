@@ -1,4 +1,4 @@
-module.exports = function cards() {
+export default function cards() {
     // Используем классы для карточек
 
     class MenuCard {
@@ -47,4 +47,4 @@ module.exports = function cards() {
             new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
         });
     });
-};
+}

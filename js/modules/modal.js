@@ -1,4 +1,4 @@
-module.exports = function modal() {
+export default function modal() {
     // Modal
 
     const modalTriggers = document.querySelectorAll('[data-modal]'),
@@ -55,4 +55,4 @@ module.exports = function modal() {
     const modalTimerId = setTimeout(openModal, 50000);
 
     window.addEventListener('scroll', showModalByScroll);
-};
+}
